@@ -4,7 +4,7 @@ let userFeelInput = document.getElementById("feelingsInput");
 let generateBtn = document.getElementById("generate");
 let baseURL = 'http://api.openweathermap.org/data/2.5/weather?';
 let qureyOption = 'zip';
-let personalApiKey = "&appid=63130463110e9019e37da1a53e7c796a";
+const ApiKey = "&appid=63130463110e9019e37da1a53e7c796a&units=metric";
 let DataObj = {};
 
 
@@ -16,7 +16,7 @@ let newDate = `${d.getUTCDate()} / ${d.getUTCMonth()+1} / ${d.getFullYear()}`;
 
 async function getweather(baseURL, place = "85001") {
     try {
-        let data = await fetch(`${baseURL}${qureyOption}=${place}${personalApiKey}`).then(response => response.json())
+        let data = await fetch(`${baseURL}${qureyOption}=${place}${ApiKey}`).then(response => response.json())
         console.log(data)
         let temprature = data.main.temp;
         return temprature;
@@ -24,8 +24,6 @@ async function getweather(baseURL, place = "85001") {
         console.log(error);
     }
 }
-
-//getweather(baseURL , "cairo")
 /**  Create function to post data to server */
 let postData = async (url = '/dataApi', data) => {
     let response = await fetch(url, {
