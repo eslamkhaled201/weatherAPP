@@ -21,23 +21,25 @@
   <main id="app">
     <div class="container">
       <div class="row justify-content-between">
-        <div class="col-md-6  form">
+        <div class="col-sm-12 mb-3 col-lg-6  form">
           <div class="form-group">
-            <input class="form-control" type="text" id="cityInput" placeholder="Enter city or country">
+            <input class="form-control" type="text" id="placeInput" placeholder="Enter Zipcode or city name">
           </div>
           <div class="form-group">
-            <textarea class=" form-control myInput" id="feelings" placeholder="Enter your feelings here" rows=""
+            <textarea class=" form-control myInput" id="feelingsInput" placeholder="Enter your feelings here" rows=""
               cols="50"></textarea>
           </div>
           <button class="btn btn-dark" id="generate" type="submit"> get weather </button>
         </div>
-        <div class="col-md-6">
-          <div id="entryHolder" class="data row">
-            <div class="w-50">
-              <div id="city"></div>
-              <div id="date"></div>
+        <div class="col-sm-12 mb-3 d-flex col-lg-6 p-0 ">
+          <div id="entryHolder" class="data w-100 h-auto m-0 justify-content-between align-items-center row">
+            <div class=" w-50">
+              <p id="content" class="w-100"></p>
             </div>
-            <div id="temp"></div>
+            <div class=" w-50 h-100 d-flex flex-column justify-content-center ">
+              <div id="date" class="text-center"></div>
+              <div id="temp" class="d-flex justify-content-center"></div>
+            </div>
           </div>
         </div>
       </div>

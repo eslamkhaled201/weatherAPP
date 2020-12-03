@@ -1,7 +1,6 @@
-import express from "express";
-import cors from "cors";
-import bodyParser from "body-parser";
-
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 // Setup empty JS object to act as endpoint for all routes
 let projectData = {};
@@ -27,6 +26,7 @@ let server = app.listen(port, () => {
 
 // make post raute to ger data from client side
 app.post('/dataApi', (request, response) => {
+    console.log(request.body)
     const { userResponse, date, temprature } = request.body;
     let neweEntery = {
         userResponse: userResponse,
@@ -34,7 +34,7 @@ app.post('/dataApi', (request, response) => {
         temp: temprature
     }
     projectData = neweEntery;
-  
+    console.log(projectData)
     response.send("data recieved")
 })
 
